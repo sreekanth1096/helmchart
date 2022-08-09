@@ -1,0 +1,16 @@
+Service:
+  name: blog
+  type: LoadBalancer
+  protocol: TCP
+  port: 80
+  targetPort: 2368
+  nodePort: 30007
+Blog:
+  name: blog
+  label: blog
+  replicas: 1
+  image: ghost:2.6-alpine
+  imagePullPolicy: Always
+  containerPort: 2368
+  urls: url
+  value: http://exampleblog.com
